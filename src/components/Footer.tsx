@@ -114,41 +114,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             ))}
           </div>
 
-          {/* Social */}
-          <div>
-            <h4
-              style={{
-                fontFamily: 'Manrope, sans-serif',
-                fontWeight: 700,
-                color: '#F0EDE8',
-                fontSize: '0.875rem',
-                marginBottom: '1rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-              }}
-            >
-              Мы в сети
-            </h4>
-            <div className="flex flex-col gap-3">
-              {[
-                { icon: '✈️', label: 'Telegram', desc: 'Новости и акции' },
-                { icon: '🔵', label: 'ВКонтакте', desc: 'Сообщество' },
-                { icon: '▶️', label: 'YouTube', desc: 'Видео с Камчатки' },
-              ].map((s) => (
-                <button
-                  key={s.label}
-                  className="flex items-center gap-3 text-left"
-                  style={{ background: 'none', border: 'none', cursor: 'pointer' }}
-                >
-                  <span style={{ fontSize: '18px' }}>{s.icon}</span>
-                  <div>
-                    <div style={{ color: '#F0EDE8', fontSize: '0.875rem', fontWeight: 500 }}>{s.label}</div>
-                    <div style={{ color: '#6B6560', fontSize: '0.75rem' }}>{s.desc}</div>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
+
         </div>
 
         {/* Bottom bar */}
