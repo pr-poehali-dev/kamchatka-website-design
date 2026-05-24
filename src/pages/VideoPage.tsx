@@ -251,14 +251,7 @@ export default function VideoPage() {
         </div>
 
         {/* Bottom CTAs */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '1rem',
-          }}
-          className="grid-cols-1 md:grid-cols-2"
-        >
+        <div>
           {/* Ask Guide */}
           <div
             style={{
@@ -319,52 +312,7 @@ export default function VideoPage() {
             )}
           </div>
 
-          {/* YouTube */}
-          <div
-            style={{
-              background: 'linear-gradient(135deg, #1A1E14 0%, #161A1C 100%)',
-              borderRadius: 20,
-              border: '1px solid rgba(125,180,181,0.15)',
-              padding: '2rem',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-            }}
-          >
-            <div>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>▶️</div>
-              <h3
-                style={{
-                  fontFamily: 'Manrope, sans-serif',
-                  fontWeight: 700,
-                  color: '#F0EDE8',
-                  fontSize: '1.125rem',
-                  marginBottom: '0.5rem',
-                }}
-              >
-                YouTube канал
-              </h3>
-              <p style={{ color: '#A8A09A', fontSize: '0.875rem', lineHeight: 1.6, marginBottom: '1.25rem' }}>
-                Более 200 видео о природе, рыбалке, турах и быте на Камчатке. Подписывайтесь.
-              </p>
-            </div>
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <div>
-                <div style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, color: '#C57F4A', fontSize: '1.25rem' }}>12.4K</div>
-                <div style={{ color: '#6B6560', fontSize: '0.75rem' }}>подписчиков</div>
-              </div>
-              <div>
-                <div style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 800, color: '#7DB4B5', fontSize: '1.25rem' }}>200+</div>
-                <div style={{ color: '#6B6560', fontSize: '0.75rem' }}>видео</div>
-              </div>
-              <button
-                className="btn-glacier"
-                style={{ padding: '10px 20px', fontSize: '0.875rem', marginLeft: 'auto' }}
-              >
-                На канал →
-              </button>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
