@@ -1,82 +1,5 @@
 import { useState } from 'react';
-
-const restaurants = [
-  {
-    name: 'Hesburger',
-    type: 'Ресторан быстрого питания',
-    desc: 'Финская сеть бургеров с натуральными ингредиентами. Фирменные бургеры, картошка фри и молочные коктейли.',
-    price: '₽',
-    rating: '4.3',
-    tags: ['🍔 Бургеры', '🍟 Картошка', '🥤 Коктейли'],
-    hours: '09:00 – 23:00',
-  },
-  {
-    name: 'У Вулкана',
-    type: 'Авторская кухня',
-    desc: 'Современная интерпретация камчатской кухни. Строганина из нельмы и бурая икра.',
-    price: '₽₽₽₽',
-    rating: '4.8',
-    tags: ['🧊 Строганина', '🥚 Икра', '🍷 Вино'],
-    hours: '13:00 – 00:00',
-  },
-  {
-    name: 'Порт',
-    type: 'Рыбный ресторан',
-    desc: 'Свежий улов прямо с рыболовецких судов. Рыба дня, палтус на гриле, камбала.',
-    price: '₽₽',
-    rating: '4.7',
-    tags: ['🐠 Улов дня', '🔥 Гриль', '🍋 Простая еда'],
-    hours: '11:00 – 22:00',
-  },
-  {
-    name: 'Берег',
-    type: 'Кафе с видом',
-    desc: 'Завтраки и обеды с видом на Авачинскую бухту. Рыбные пироги и чай из трав.',
-    price: '₽₽',
-    rating: '4.6',
-    tags: ['🫖 Травяной чай', '🥧 Пироги', '🌅 Вид'],
-    hours: '08:00 – 20:00',
-  },
-];
-
-const bars = [
-  {
-    name: 'Огонь',
-    type: 'Бар',
-    desc: 'Крафтовое пиво и коктейли с названиями камчатских вулканов. Авторский бар на набережной.',
-    price: '₽₽',
-    rating: '4.8',
-    tags: ['🍺 Крафт', '🍹 Коктейли', '🎵 Живая музыка'],
-    hours: '17:00 – 02:00',
-  },
-  {
-    name: 'Сопка',
-    type: 'Бар-ресторан',
-    desc: 'Широкий выбор виски и камчатской настойки. Тёплая атмосфера, деревянный интерьер.',
-    price: '₽₽₽',
-    rating: '4.7',
-    tags: ['🥃 Виски', '🎶 Джаз', '🪵 Тепло'],
-    hours: '18:00 – 03:00',
-  },
-  {
-    name: 'Лава',
-    type: 'Клуб-бар',
-    desc: 'Танцы, диджеи и неоновые вулканы на стенах. Главное ночное место Петропавловска.',
-    price: '₽₽',
-    rating: '4.5',
-    tags: ['💃 Танцы', '🎤 DJ', '🌋 Атмосфера'],
-    hours: '21:00 – 05:00',
-  },
-  {
-    name: 'Тихий океан',
-    type: 'Бар с видом',
-    desc: 'Панорамный вид на Тихий океан. Идеальное место для встречи заката с бокалом.',
-    price: '₽₽₽',
-    rating: '4.9',
-    tags: ['🌊 Вид', '🌅 Закат', '🍷 Вино'],
-    hours: '14:00 – 00:00',
-  },
-];
+import { venues } from '@/data/venues';
 
 const priceMap: Record<string, string> = {
   '₽': 'до 500 ₽',
@@ -85,76 +8,18 @@ const priceMap: Record<string, string> = {
   '₽₽₽₽': 'от 3000 ₽',
 };
 
-function PlaceCard({ item }: { item: typeof restaurants[0] }) {
-  return (
-    <div className="card-base" style={{ padding: '1.5rem' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.75rem' }}>
-        <div>
-          <h3
-            style={{
-              fontFamily: 'Manrope, sans-serif',
-              fontWeight: 700,
-              color: '#F0EDE8',
-              fontSize: '1.1rem',
-              letterSpacing: '-0.02em',
-              marginBottom: '0.2rem',
-            }}
-          >
-            {item.name}
-          </h3>
-          <span style={{ color: '#7DB4B5', fontSize: '0.78rem', fontFamily: 'Manrope, sans-serif', fontWeight: 500 }}>
-            {item.type}
-          </span>
-        </div>
-        <div style={{ textAlign: 'right' }}>
-          <div
-            style={{
-              fontFamily: 'Manrope, sans-serif',
-              fontWeight: 700,
-              color: '#C57F4A',
-              fontSize: '0.95rem',
-            }}
-          >
-            {item.price}
-          </div>
-          <div style={{ color: '#6B6560', fontSize: '0.72rem' }}>{priceMap[item.price]}</div>
-        </div>
-      </div>
-
-      <p style={{ color: '#A8A09A', fontSize: '0.875rem', lineHeight: 1.6, marginBottom: '1rem' }}>
-        {item.desc}
-      </p>
-
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1rem' }}>
-        {item.tags.map((tag, i) => (
-          <span
-            key={i}
-            style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: '20px',
-              padding: '3px 10px',
-              fontSize: '0.75rem',
-              color: '#A8A09A',
-            }}
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={{ color: '#6B6560', fontSize: '0.78rem' }}>⏰ {item.hours}</span>
-        <span style={{ color: '#F0EDE8', fontSize: '0.85rem', fontFamily: 'Manrope, sans-serif', fontWeight: 600 }}>
-          ⭐ {item.rating}
-        </span>
-      </div>
-    </div>
-  );
+interface DiningPageProps {
+  onVenueOpen: (id: string) => void;
 }
 
-export default function DiningPage() {
+export default function DiningPage({ onVenueOpen }: DiningPageProps) {
   const [tab, setTab] = useState<'eat' | 'fun'>('eat');
+
+  const filtered = venues.filter((v) => v.category === tab);
+
+  // Центр карты — Петропавловск-Камчатский
+  const mapCenter = { lat: 53.0445, lng: 158.6540 };
+  const allMapUrl = `https://yandex.ru/map-widget/v1/?ll=${mapCenter.lng}%2C${mapCenter.lat}&z=14&mode=search&text=${encodeURIComponent('Петропавловск-Камчатский рестораны')}`;
 
   return (
     <div style={{ paddingTop: '5rem', paddingBottom: '5rem' }}>
@@ -228,26 +93,181 @@ export default function DiningPage() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
             gap: '1.25rem',
+            marginBottom: '3rem',
           }}
         >
-          {(tab === 'eat' ? restaurants : bars).map((item, i) => (
-            <PlaceCard key={i} item={item} />
+          {filtered.map((item) => (
+            <button
+              key={item.id}
+              id={`venue-${item.id}`}
+              onClick={() => onVenueOpen(item.id)}
+              className="card-base"
+              style={{
+                padding: 0,
+                overflow: 'hidden',
+                cursor: 'pointer',
+                textAlign: 'left',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              {/* Cover image */}
+              <div style={{ position: 'relative', height: '160px', overflow: 'hidden' }}>
+                <img
+                  src={item.coverImg}
+                  alt={item.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.5s ease',
+                  }}
+                  onMouseOver={(e) => (e.currentTarget.style.transform = 'scale(1.06)')}
+                  onMouseOut={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(17,21,28,0.7) 0%, transparent 60%)',
+                  }}
+                />
+                {/* Rating */}
+                <span
+                  style={{
+                    position: 'absolute',
+                    top: '0.75rem',
+                    right: '0.75rem',
+                    background: 'rgba(17,21,28,0.8)',
+                    backdropFilter: 'blur(8px)',
+                    color: '#F0EDE8',
+                    borderRadius: '20px',
+                    padding: '3px 10px',
+                    fontSize: '0.78rem',
+                    fontFamily: 'Manrope, sans-serif',
+                    fontWeight: 700,
+                  }}
+                >
+                  ⭐ {item.rating}
+                </span>
+              </div>
+
+              {/* Content */}
+              <div style={{ padding: '1.25rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.4rem' }}>
+                  <h3
+                    style={{
+                      fontFamily: 'Manrope, sans-serif',
+                      fontWeight: 700,
+                      color: '#F0EDE8',
+                      fontSize: '1.05rem',
+                      letterSpacing: '-0.02em',
+                    }}
+                  >
+                    {item.name}
+                  </h3>
+                  <div style={{ textAlign: 'right', marginLeft: '8px', flexShrink: 0 }}>
+                    <div style={{ fontFamily: 'Manrope, sans-serif', fontWeight: 700, color: '#C57F4A', fontSize: '0.9rem' }}>
+                      {item.price}
+                    </div>
+                    <div style={{ color: '#6B6560', fontSize: '0.68rem' }}>{priceMap[item.price]}</div>
+                  </div>
+                </div>
+
+                <div style={{ color: '#7DB4B5', fontSize: '0.78rem', fontFamily: 'Manrope, sans-serif', fontWeight: 500, marginBottom: '0.6rem' }}>
+                  {item.type}
+                </div>
+
+                <p style={{ color: '#A8A09A', fontSize: '0.82rem', lineHeight: 1.55, marginBottom: '0.875rem', flex: 1 }}>
+                  {item.desc}
+                </p>
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', marginBottom: '0.875rem' }}>
+                  {item.tags.slice(0, 3).map((tag, i) => (
+                    <span
+                      key={i}
+                      style={{
+                        background: 'rgba(255,255,255,0.05)',
+                        border: '1px solid rgba(255,255,255,0.08)',
+                        borderRadius: '20px',
+                        padding: '2px 9px',
+                        fontSize: '0.72rem',
+                        color: '#A8A09A',
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ color: '#6B6560', fontSize: '0.75rem' }}>⏰ {item.hours}</span>
+                  <span
+                    style={{
+                      color: '#C57F4A',
+                      fontSize: '0.82rem',
+                      fontFamily: 'Manrope, sans-serif',
+                      fontWeight: 600,
+                    }}
+                  >
+                    Подробнее →
+                  </span>
+                </div>
+              </div>
+            </button>
           ))}
+        </div>
+
+        {/* Map of all venues */}
+        <div
+          style={{
+            background: '#181E28',
+            borderRadius: 20,
+            border: '1px solid rgba(255,255,255,0.07)',
+            overflow: 'hidden',
+            marginBottom: '2rem',
+          }}
+        >
+          <div style={{ padding: '1.5rem 1.75rem 1rem' }}>
+            <h2
+              style={{
+                fontFamily: 'Manrope, sans-serif',
+                fontWeight: 700,
+                color: '#F0EDE8',
+                fontSize: '1.125rem',
+                marginBottom: '0.25rem',
+              }}
+            >
+              🗺️ Все заведения на карте
+            </h2>
+            <p style={{ color: '#A8A09A', fontSize: '0.85rem' }}>
+              Петропавловск-Камчатский — нажмите на карточку заведения, чтобы открыть точный адрес
+            </p>
+          </div>
+          <iframe
+            src={allMapUrl}
+            width="100%"
+            height="380"
+            frameBorder="0"
+            title="Карта заведений Камчатки"
+            style={{ display: 'block' }}
+            allowFullScreen
+          />
         </div>
 
         {/* Price Legend */}
         <div
           style={{
-            marginTop: '2.5rem',
-            padding: '1.5rem',
+            padding: '1.25rem 1.5rem',
             background: '#181E28',
-            borderRadius: 16,
+            borderRadius: 14,
             border: '1px solid rgba(255,255,255,0.06)',
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '1.5rem',
+            gap: '1.25rem',
             alignItems: 'center',
           }}
         >
