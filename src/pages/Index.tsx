@@ -1,17 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import HomePage from '@/pages/HomePage';
+import PlacesPage from '@/pages/PlacesPage';
+import DiningPage from '@/pages/DiningPage';
+import ToursPage from '@/pages/ToursPage';
+import TicketsPage from '@/pages/TicketsPage';
+import VideoPage from '@/pages/VideoPage';
 
-const Index = () => {
+type Page = 'home' | 'places' | 'dining' | 'tours' | 'tickets' | 'video';
+
+export default function Index() {
+  const [activePage, setActivePage] = useState<Page>('home');
+
+  const handleNavigate = (page: string) => {
+    const valid: Page[] = ['home', 'places', 'dining', 'tours', 'tickets', 'video'];
+    if (valid.includes(page as Page)) {
+      setActivePage(page as Page);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
-      <span className="absolute bottom-8 left-1/2 -translate-x-1/2 inline-block bg-[#FF6637] text-white text-sm px-4 py-2 rounded-full whitespace-nowrap">
-        Подождите 5 минут, Юра создает первую версию проекта с нуля
-      </span>
+    <div style={{ minHeight: '100vh', background: 'var(--bg-deep)' }}>
+      <Header activePage={activePage} onNavigate={handleNavigate} />
+      <main>
+        {activePage === 'home' && <HomePage onNavigate={handleNavigate} />}
+        {activePage === 'places' && <PlacesPage />}
+        {activePage === 'dining' && <DiningPage />}
+        {activePage === 'tours' && <ToursPage onNavigate={handleNavigate} />}
+        {activePage === 'tickets' && <TicketsPage />}
+        {activePage === 'video' && <VideoPage />}
+      </main>
+      <Footer onNavigate={handleNavigate} />
     </div>
   );
-};
-
-export default Index;
+}
