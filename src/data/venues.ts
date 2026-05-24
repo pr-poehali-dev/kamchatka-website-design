@@ -75,7 +75,7 @@ export const venues: Venue[] = [
     tags: ['🍕 Пицца', '🍝 Паста', '🚚 Доставка'],
     hours: '10:00 – 23:00',
     phone: '+7 (415) 238-77-22',
-    address: 'ул. Тушканова, 10, Петропавловск-Камчатский',
+    address: 'ул. Лукашевского, 4, Петропавловск-Камчатский',
     lat: 53.0465,
     lng: 158.6525,
     coverImg: 'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/556c2995-1e60-4f3a-98d1-8bc96de1520a.jpg',
