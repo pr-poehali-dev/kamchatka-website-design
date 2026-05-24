@@ -80,7 +80,6 @@ export const venues: Venue[] = [
     coverImg: 'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/556c2995-1e60-4f3a-98d1-8bc96de1520a.jpg',
     photos: [
       'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/556c2995-1e60-4f3a-98d1-8bc96de1520a.jpg',
-      'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/8ca623a6-f9bf-413c-a422-58b0cae19130.jpg',
     ],
     menu: [
       {
