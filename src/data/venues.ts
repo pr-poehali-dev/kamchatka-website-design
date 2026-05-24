@@ -38,10 +38,9 @@ export const venues: Venue[] = [
     address: 'ул. Тушканова, 35, Петропавловск-Камчатский',
     lat: 53.0512,
     lng: 158.6442,
-    coverImg: 'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/78bac56e-49b5-4dd4-a23f-87773a7642d7.jpg',
+    coverImg: 'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/b67a9a23-9fb9-4168-892e-32671a490ba5.jpg',
     photos: [
-      'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/78bac56e-49b5-4dd4-a23f-87773a7642d7.jpg',
-      AVACHA_IMG,
+      'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/b67a9a23-9fb9-4168-892e-32671a490ba5.jpg',
     ],
     menu: [
       {
