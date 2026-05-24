@@ -35,9 +35,9 @@ export const venues: Venue[] = [
     tags: ['🍔 Бургеры', '🍟 Картошка', '🥤 Коктейли'],
     hours: '09:00 – 23:00',
     phone: '+7 (415) 231-00-01',
-    address: 'пр. Карла Маркса, 35, Петропавловск-Камчатский',
-    lat: 53.0450,
-    lng: 158.6548,
+    address: 'ул. Тушканова, 35, Петропавловск-Камчатский',
+    lat: 53.0512,
+    lng: 158.6442,
     coverImg: 'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/78bac56e-49b5-4dd4-a23f-87773a7642d7.jpg',
     photos: [
       'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/78bac56e-49b5-4dd4-a23f-87773a7642d7.jpg',
