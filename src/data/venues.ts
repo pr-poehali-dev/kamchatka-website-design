@@ -76,8 +76,8 @@ export const venues: Venue[] = [
     hours: '10:00 – 23:00',
     phone: '+7 (415) 238-77-22',
     address: 'ул. Лукашевского, 4, Петропавловск-Камчатский',
-    lat: 53.0465,
-    lng: 158.6525,
+    lat: 53.0598,
+    lng: 158.6368,
     coverImg: 'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/556c2995-1e60-4f3a-98d1-8bc96de1520a.jpg',
     photos: [
       'https://cdn.poehali.dev/projects/bf6bb77a-1f01-478f-85a5-b166685a2d3b/files/556c2995-1e60-4f3a-98d1-8bc96de1520a.jpg',
