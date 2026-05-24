@@ -276,24 +276,7 @@ export default function ToursPage({ onNavigate }: ToursPageProps) {
           ))}
         </div>
 
-        {/* Note */}
-        <div
-          style={{
-            marginTop: '2.5rem',
-            padding: '1.5rem',
-            background: 'rgba(197,127,74,0.06)',
-            border: '1px solid rgba(197,127,74,0.15)',
-            borderRadius: 16,
-            display: 'flex',
-            gap: '1rem',
-            alignItems: 'flex-start',
-          }}
-        >
-          <span style={{ fontSize: '1.25rem', flexShrink: 0 }}>💡</span>
-          <p style={{ color: '#A8A09A', fontSize: '0.875rem', lineHeight: 1.6 }}>
-            <strong style={{ color: '#F0EDE8' }}>Индивидуальный тур:</strong> Все пакеты можно адаптировать под вашу группу, даты и бюджет. Напишите нам — составим маршрут мечты.
-          </p>
-        </div>
+
       </div>
     </div>
   );
